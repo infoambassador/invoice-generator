@@ -11,7 +11,7 @@ invoice_info = {
     'Name': 'John Smith',
     'StreetAddress': '5555 FakeAddress Drive',
     'CityStateZip':'Austin, TX 78749',
-    'InvoiceDate': '9/8/2017',
+    'InvoiceDate': '{:%b %d %Y}'.format(date.today()),
     'PayeeName': 'Kelly Smith',
     'PayeeStreetAddress': '5555 FakeAddress Drive',
     'PayeeCityStateZip': 'Austin, TX 78749',
