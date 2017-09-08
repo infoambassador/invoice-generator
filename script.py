@@ -18,5 +18,22 @@ invoice_info = {
     'TotalBilled': '$4000.00'
 }
 
+WorkEvent = {
+        'Title': 'Texas Pathways Project, Institute #2',
+        'Duration': 3,
+        'Description': 'Assisted in lots of stuff.'
+    }
+
+
+work_history = [
+    {
+        'WorkDescription':WorkEvent['Title'],
+        'Duration':str(WorkEvent['Duration']),
+        'WorkDetails':WorkEvent['Description'],
+        'AmountBilled': '${}.00'.format(str(WorkEvent['Duration']*150))
+    }
+]
+
 document.merge(**invoice_info)
-document.write('reports/testoutput.docx')
+document.merge_rows('WorkDescription',work_history)
+document.write('reports/Invoice - {}.docx'.format(date.today()))
